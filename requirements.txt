@@ -1,0 +1,1 @@
+py-cord @ git+https://github.com/pycord-development/pycord@b872cfea1f23673b97bd6027ebde5c2e4472afea
