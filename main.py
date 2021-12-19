@@ -1,5 +1,6 @@
 import discord
 import os
+import sys
 
 RAT_POEM = '''
 rat
@@ -49,7 +50,7 @@ class Bot(discord.Client):
                 description = 'Spectrum is a mod by DaFuqs'
             ))
 
-    async def on_ready(self, ctx):
+    async def on_ready(self):
         await bot.change_presence(
             status = discord.Status.online,
             activity = discord.CustomActivity(
@@ -61,5 +62,10 @@ class Bot(discord.Client):
         )
 
 bot = Bot()
-bot.run(os.getenv('TOKEN'))
+
+token = os.getenv('TOKEN')
+if len(sys.argv) >= 2:
+    token = sys.argv[1]
+
+bot.run(token)
 
