@@ -51,7 +51,7 @@ class Bot(discord.Client):
 
 bot = Bot()
     
-bot.change_presence(
+await bot.change_presence(
     status = discord.Status.online,
     activity = discord.CustomActivity(
         'Informing people about mods.',
