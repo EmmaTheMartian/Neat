@@ -53,7 +53,7 @@ bot = Bot()
     
 bot.change_presence(
     status = discord.Status.online,
-    status = discord.CustomActivity(
+    activity = discord.CustomActivity(
         'Informing people about mods.',
         emoji = discord.PartialEmoji(
             name = '📔'
