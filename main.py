@@ -25,20 +25,30 @@ STOP POSTING ABOUT GREGTECH, I'M TIRED OF SEEING IT! My friends on reddit send m
 
 class Bot(discord.Client):
     async def on_message(self, msg):
-        if 'neat' in msg.content.lower() and msg.author.bot is not True:
+        m = msg.split()
+        
+        if msg.author.bot: return
+
+        if 'neat' in m:
             await msg.channel.send(embed = discord.Embed(
                 title = 'Neat',
                 description = 'Neat is a mod by Vaskii'
             ))
-        if 'rat' in msg.content.lower() and msg.author.bot is not True:
+        elif 'rat' in m:
             await msg.channel.send(embed = discord.Embed(
                 title = 'Rat',
                 description = RAT_POEM
             ))
-        if 'greg' in msg.content.lower() and msg.author.bot is not True:
+        elif 'greg' in m:
             await msg.channel.send(embed = discord.Embed(
                 title = 'Greg',
                 description = GREG_RANT
+            ))
+        
+        if msg.lower().startswith('what is spectrum'):
+            await msg.channel.send(embed = discord.Embed(
+                title = 'Spectrum',
+                description = 'Spectrum is a mod by DaFuqs'
             ))
 
 Bot().run(os.getenv('TOKEN'))
