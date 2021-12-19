@@ -30,23 +30,23 @@ class Bot(discord.Client):
         if msg.author.bot: return
 
         if 'neat' in m:
-            await msg.channel.send(embed = discord.Embed(
+            await msg.reply(embed = discord.Embed(
                 title = 'Neat',
                 description = 'Neat is a mod by Vaskii'
             ))
         elif 'rat' in m:
-            await msg.channel.send(embed = discord.Embed(
+            await msg.reply(embed = discord.Embed(
                 title = 'Rat',
                 description = RAT_POEM
             ))
         elif 'greg' in m:
-            await msg.channel.send(embed = discord.Embed(
+            await msg.reply(embed = discord.Embed(
                 title = 'Greg',
                 description = GREG_RANT
             ))
         
         if msg.content.lower().startswith('what is spectrum'):
-            await msg.channel.send(embed = discord.Embed(
+            await msg.reply(embed = discord.Embed(
                 title = 'Spectrum',
                 description = 'Spectrum is a mod by DaFuqs'
             ))
