@@ -45,7 +45,7 @@ class Bot(discord.Client):
                 description = GREG_RANT
             ))
         
-        if msg.lower().startswith('what is spectrum'):
+        if msg.content.lower().startswith('what is spectrum'):
             await msg.channel.send(embed = discord.Embed(
                 title = 'Spectrum',
                 description = 'Spectrum is a mod by DaFuqs'
