@@ -49,12 +49,17 @@ class Bot(discord.Client):
                 description = 'Spectrum is a mod by DaFuqs'
             ))
 
-# the ultimate line(s) of code.
-# don't judge, I didn't want to make more variables...
-Bot(
-    activity = discord.Activity(
-        name = 'Informing people about mods.',
-        type = discord.ActivityType.custom
+bot = Bot()
+    
+bot.change_presence(
+    status = discord.Status.online,
+    status = discord.CustomActivity(
+        'Informing people about mods.',
+        emoji = discord.PartialEmoji(
+            name = '📔'
+        )
     )
-).run(os.getenv('TOKEN'))
+)
+
+bot.run(os.getenv('TOKEN'))
 
