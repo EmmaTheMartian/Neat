@@ -49,17 +49,17 @@ class Bot(discord.Client):
                 description = 'Spectrum is a mod by DaFuqs'
             ))
 
-bot = Bot()
-    
-await bot.change_presence(
-    status = discord.Status.online,
-    activity = discord.CustomActivity(
-        'Informing people about mods.',
-        emoji = discord.PartialEmoji(
-            name = '📔'
+    async def on_ready(self, ctx):
+        await bot.change_presence(
+            status = discord.Status.online,
+            activity = discord.CustomActivity(
+                'Informing people about mods.',
+                emoji = discord.PartialEmoji(
+                    name = '📔'
+                )
+            )
         )
-    )
-)
 
+bot = Bot()
 bot.run(os.getenv('TOKEN'))
 
