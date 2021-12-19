@@ -25,7 +25,7 @@ STOP POSTING ABOUT GREGTECH, I'M TIRED OF SEEING IT! My friends on reddit send m
 
 class Bot(discord.Client):
     async def on_message(self, msg):
-        m = msg.split()
+        m = msg.content.split()
         
         if msg.author.bot: return
 
