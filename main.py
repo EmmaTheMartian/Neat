@@ -1,5 +1,5 @@
 import discord
-import sys
+import os
 
 class Bot(discord.Client):
     async def on_message(self, msg):
@@ -9,5 +9,5 @@ class Bot(discord.Client):
                 description = 'Neat is a mod by Vaskii'
             ))
 
-Bot().run(sys.argv[1])
+Bot().run(os.getenv('TOKEN'))
 
