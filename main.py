@@ -27,18 +27,19 @@ STOP POSTING ABOUT GREGTECH, I'M TIRED OF SEEING IT! My friends on reddit send m
 class Bot(discord.Client):
     async def on_message(self, msg):
         if msg.author.bot: return
-
-        if 'neat' in msg.content:
+        
+        content = msg.content.split()
+        if 'neat' in content:
             await msg.reply(embed = discord.Embed(
                 title = 'Neat',
                 description = 'Neat is a mod by Vaskii'
             ))
-        elif 'rat' in msg.content:
+        elif 'rat' in content:
             await msg.reply(embed = discord.Embed(
                 title = 'Rat',
                 description = RAT_POEM
             ))
-        elif 'greg' in msg.content:
+        elif 'greg' in content:
             await msg.reply(embed = discord.Embed(
                 title = 'Greg',
                 description = GREG_RANT
