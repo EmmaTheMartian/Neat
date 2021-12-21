@@ -146,7 +146,7 @@ async def search(
             mods.append(f'- {mod["title"]} (**Slug**: *{mod["slug"]}*)\n')
     # search on CF
     elif platform == 'curseforge':
-        r = requests.get(f'https://api.curseforge.com/v1/mods/search?gameId=432&searchFilter={search_text}', headers = headers)
+        r = requests.get(f'https://api.curseforge.com/v1/mods/search?gameId=432&categoryId=6&searchFilter={search_text}', headers = headers)
         for mod in r.json()['data']:
             mods.append(f'- {mod["name"]} (**ID**: *{mod["id"]}*, **Slug**: *{mod["slug"]}*)\n')
     
