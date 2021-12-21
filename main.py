@@ -99,7 +99,7 @@ async def on_message(msg):
 
 
 # commands
-@bot.slash_command(guild_ids=[908742958214438972])
+@bot.slash_command()
 async def mod(
     ctx,
     platform: commands.Option(str, 'Platform', choices=['curseforge', 'modrinth']),
