@@ -44,7 +44,13 @@ GREG_RANT = '''STOP POSTING ABOUT GREGTECH, I'M TIRED OF SEEING IT! My friends o
 
 # gets a mod and returns the json data.
 def get_mod(platform: str, slug: str):
-    m = {}
+    m = {
+        'name': 'N/a',
+        'authors': ['N/a'],
+        'summary': 'N/a',
+        'downloadCount': 0,
+        'websiteUrl': 'N/a'
+    }
 
     # Modrinth
     if platform in ('modrinth', 'md'):
@@ -86,9 +92,9 @@ def get_mod(platform: str, slug: str):
 # events
 @bot.listen('on_message')
 async def on_message(msg):
-    if msg.author.bot: return
-        
+    if msg.author.bot: return 
     content = msg.content.split()
+
     if 'neat' in content:
         await msg.reply(embed = discord.Embed(
             title = 'Neat',
