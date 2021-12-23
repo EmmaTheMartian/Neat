@@ -93,7 +93,7 @@ def get_mod(platform: str, slug: str):
 @bot.listen('on_message')
 async def on_message(msg):
     if msg.author.bot: return 
-    content = msg.content.split()
+    content = msg.content.lower().split()
 
     if 'neat' in content:
         await msg.reply(embed = discord.Embed(
