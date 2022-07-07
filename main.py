@@ -98,7 +98,7 @@ async def on_message(msg):
     if 'neat' in content:
         await msg.reply(embed = discord.Embed(
             title = 'Neat',
-            description = 'Neat is a mod by Vaskii'
+            description = 'Neat is a mod by Vazkii'
         ))
     elif 'rat' in content:
         await msg.reply(embed = discord.Embed(
