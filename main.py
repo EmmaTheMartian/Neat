@@ -79,23 +79,23 @@ def get_mod(platform: str, slug: str):
 async def on_message(msg):
     if msg.author.bot: return 
     content = msg.content.lower().split()
+    for i in content:
+        if i.startswith('neat'):
+            await msg.reply(embed = discord.Embed(
+                title = 'Neat',
+                description = 'Neat is a mod by Vazkii'
+            ))
+        elif  i.startswith('rat'):
+            await msg.reply(embed = discord.Embed(
+                title = 'Rat',
+                description = RAT_POEM
+            ))
+        elif i.startswith('greg'):
+            await msg.reply(embed = discord.Embed(
+                title = 'Greg',
+                description = GREG_RANT
+            ))
 
-    if 'neat' in content:
-        await msg.reply(embed = discord.Embed(
-            title = 'Neat',
-            description = 'Neat is a mod by Vazkii'
-        ))
-    elif 'rat' in content:
-        await msg.reply(embed = discord.Embed(
-            title = 'Rat',
-            description = RAT_POEM
-        ))
-    elif 'greg' in content:
-        await msg.reply(embed = discord.Embed(
-            title = 'Greg',
-            description = GREG_RANT
-        ))
-        
     if msg.content.lower().startswith('what is spectrum'):
         await msg.reply(embed = discord.Embed(
             title = 'Spectrum',
