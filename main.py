@@ -85,7 +85,7 @@ async def on_message(msg):
                 title = 'Neat',
                 description = 'Neat is a mod by Vazkii'
             ))
-        elif  i.startswith('rat'):
+        elif i.startswith('rat'):
             await msg.reply(embed = discord.Embed(
                 title = 'Rat',
                 description = RAT_POEM
