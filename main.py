@@ -4,6 +4,7 @@ from discord import commands
 import os
 import sys
 import requests
+import random
 
 
 # variables
@@ -22,25 +23,20 @@ headers = {
 
 
 # constants
-RAT_POEM = '''rat
-
+RAT_POEMS = (
+    '''All I know how to do is reply "haha funny rat mod" every time someone says "rat" in the reddit comments. Is there more to life? Is there more to existence? I wouldn't know. It's not in my code.''',
+    '''rat
 Hello darkness, my old friend...
-
 I've come to talk with you again...
-
 Because a vision softly cre-eeping,
-
 Left its seeds while I was sle-eeping,
-
 And the rat, that was planted, in my brain
-
 Still remains...
-
 Within the sound, of silence
 '''
+)
 
 GREG_RANT = '''STOP POSTING ABOUT GREGTECH, I'M TIRED OF SEEING IT! My friends on reddit send me memes, on discord it's fucking memes - I was in a subreddit, right? and ALLLLLLLLL of the POSTS are just GregTech stuff. I- I showed my Champion underwear to my girlfriend, and the logo I flipped it and I said, "Hey babe: When the underwear greg 😂 😂 😂"'''
-
 
 # gets a mod and returns the json data.
 def get_mod(platform: str, slug: str):
@@ -94,23 +90,23 @@ def get_mod(platform: str, slug: str):
 async def on_message(msg):
     if msg.author.bot: return 
     content = msg.content.lower().split()
+    for i in content:
+        if i.startswith('neat'):
+            await msg.reply(embed = discord.Embed(
+                title = 'Neat',
+                description = 'Neat is a mod by Vazkii'
+            ))
+        elif i.startswith('rat'):
+            await msg.reply(embed = discord.Embed(
+                title = 'Rat',
+                description = random.choice(RAT_POEMS)
+            ))
+        elif i.startswith('greg'):
+            await msg.reply(embed = discord.Embed(
+                title = 'Greg',
+                description = GREG_RANT
+            ))
 
-    if 'neat' in content:
-        await msg.reply(embed = discord.Embed(
-            title = 'Neat',
-            description = 'Neat is a mod by Vazkii'
-        ))
-    elif 'rat' in content:
-        await msg.reply(embed = discord.Embed(
-            title = 'Rat',
-            description = RAT_POEM
-        ))
-    elif 'greg' in content:
-        await msg.reply(embed = discord.Embed(
-            title = 'Greg',
-            description = GREG_RANT
-        ))
-        
     if msg.content.lower().startswith('what is spectrum'):
         await msg.reply(embed = discord.Embed(
             title = 'Spectrum',
