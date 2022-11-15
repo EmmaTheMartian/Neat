@@ -4,6 +4,7 @@ from discord import commands
 import os
 import sys
 import requests
+import random
 
 
 # variables
@@ -22,10 +23,20 @@ headers = {
 
 
 # constants
-RAT_POEM = '''All I know how to do is reply "haha funny rat mod" every time someone says "rat" in the reddit comments. Is there more to life? Is there more to existence? I wouldn't know. It's not in my code.'''
+RAT_POEMS = (
+    '''All I know how to do is reply "haha funny rat mod" every time someone says "rat" in the reddit comments. Is there more to life? Is there more to existence? I wouldn't know. It's not in my code.''',
+    '''rat
+Hello darkness, my old friend...
+I've come to talk with you again...
+Because a vision softly cre-eeping,
+Left its seeds while I was sle-eeping,
+And the rat, that was planted, in my brain
+Still remains...
+Within the sound, of silence
+'''
+)
 
-GREG_RANT = '''OMG😲😲 IS THAT👉 A MOTHER👨‍👩‍👧‍👦FUCKING😊 🌟GREGTECH🌟🔧🔧🔧🔧 REFERENCE!??!?!? GregTech🔧🔧🔧🔧 is the best mod ever made!!!! 🏆🏆GregoriousT for universe leadership 2030 🪐🌌 👑👑👑When the 只有格雷格。 is greggy! 🔧🛠️🔧🛠️🔧🛠️🔧🛠️ Ultra super mega extreme voltage tier 😳😳😳Death😵 by electrocution🔌 and vaporizing 🔥😄😄😄💀💀I have spent 1000 hours on GT:NH 😄🙂😐😕☹️💀What is grass??? 🌳🌲🌳🌲Sex and cum on behalf of Regian24 🥛😄GregTech 7 📣📣📣I am diagnosed with 17 separate mind conditions👍👍👍🏥'''
-
+GREG_RANT = '''STOP POSTING ABOUT GREGTECH, I'M TIRED OF SEEING IT! My friends on reddit send me memes, on discord it's fucking memes - I was in a subreddit, right? and ALLLLLLLLL of the POSTS are just GregTech stuff. I- I showed my Champion underwear to my girlfriend, and the logo I flipped it and I said, "Hey babe: When the underwear greg 😂 😂 😂"'''
 
 # gets a mod and returns the json data.
 def get_mod(platform: str, slug: str):
@@ -88,7 +99,7 @@ async def on_message(msg):
         elif i.startswith('rat'):
             await msg.reply(embed = discord.Embed(
                 title = 'Rat',
-                description = RAT_POEM
+                description = random.choice(RAT_POEMS)
             ))
         elif i.startswith('greg'):
             await msg.reply(embed = discord.Embed(
