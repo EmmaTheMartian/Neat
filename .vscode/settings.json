@@ -1,0 +1,22 @@
+{
+	"editor.foldingStrategy": "auto",
+	"editor.defaultFoldingRangeProvider": "zokugun.explicit-folding",
+	"explicitFolding.rules": {
+		"*": {
+			"begin": "SECTION",
+			"end": "!SECTION"
+		},
+	},
+	"[python]": {
+		"explicitFolding.rules": [
+			{
+				"beginRegex": "\"\"\"",
+				"endRegex": "\"\"\""
+			},
+			{
+				"indentation": true,
+				"offSide": true
+			}
+		]
+	}
+}

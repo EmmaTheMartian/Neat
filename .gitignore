@@ -1,6 +1,9 @@
 # Development Tools
 /run.sh
 
+# Bot-Related Stuff
+/options.json
+
 # Python
 /env
 **/__pycache__
