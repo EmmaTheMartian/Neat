@@ -5,7 +5,7 @@ ERRORS = {
 	'unknown_mod_platform': lambda arg: f'Unknown mod platform: {arg}',
 	'no_such_mod': lambda arg: f'No such mod: {arg}',
 	'unknown_meme': lambda arg: f'No such meme: {arg}',
-	'invalid_value': lambda arg: f'Invalid option value: {arg}',
+	'invalid_value': lambda arg: f'Invalid option value: {arg}\n**Values are case-sensitive!**\nSee `/options info [option]` for help.',
 	'unknown_mode': lambda arg: f'Unknown or invalid mode: {arg}',
 	'guild_is_none': lambda: 'Guild is equal to `None`. This error should not happen, please report it!',
 	'search_failed': lambda: 'Search failed'

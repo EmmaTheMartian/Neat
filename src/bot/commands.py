@@ -83,7 +83,8 @@ async def meme(
 	await c.respond(embed = util.embed(consts.MEMES[meme][0], consts.MEMES[meme][1]))
 
 
-@consts.BOT.slash_command(name = 'options', administrator = True)
+@consts.BOT.slash_command(name = 'options')
+@discord.default_permissions(administrator = True)
 @discord.commands.option('mode', description = 'Mode for the command', autocomplete = autocomplete.simple({ 'set', 'get', 'info', 'getall' }))
 @discord.commands.option('option', description = 'Option to configure', autocomplete = autocomplete.simple(option_util.OPTIONS.keys()), required = False)
 @discord.commands.option('value', description = 'Value to set the option to', autocomplete = autocomplete.get_option_value, required = False)
@@ -117,7 +118,7 @@ async def options(
 		case 'info':
 			o = option_util.OPTIONS[option]
 			e = util.embed(o['name'], o['info'])
-			e.add_field(name = 'Valid values', value = ', '.join([v for v in o['values']]))
+			e.add_field(name = 'Allowed Values', value = ', '.join([f'`{v}`' for v in o['values']]))
 			await c.respond(embed = e)
 		case 'getall':
 			e = util.embed('Current Settings', '')
