@@ -1,4 +1,6 @@
+# Development Tools
 /run.sh
-/env
 
-/pycord
+# Python
+/env
+**/__pycache__
